@@ -70,6 +70,8 @@ ifeq ($(USE_DEXPREOPT),true)
         endif
     endif
 endif
+DONT_DEXPREOPT_PREBUILTS := true
+
 # Display
 BOARD_USES_LEGACY_QCOM_DISPLAY := true
 BOARD_EGL_CFG := device/htc/msm7x30-common/configs/egl.cfg
