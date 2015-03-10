@@ -130,7 +130,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     make_ext4fs \
     e2fsck \
-    setup_fs
+    setup_fs \
+    mkfs.f2fs \
+    fsck.f2fs \
+    fibmap.f2fs \
+    f2fstat*
 
 # Common build.prop overrides
 PRODUCT_PROPERTY_OVERRIDES += \
