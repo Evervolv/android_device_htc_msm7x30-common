@@ -126,6 +126,9 @@ TARGET_DISABLE_ARM_PIE := true
 # Prelink support
 TARGET_NEEDS_PRELINK_SUPPORT := true
 
+# Power
+TARGET_POWERHAL_VARIANT := cm
+
 # Qualcomm support
 BOARD_USES_QCOM_HARDWARE := true
 

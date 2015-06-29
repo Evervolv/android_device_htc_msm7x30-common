@@ -98,10 +98,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml \
     packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:system/etc/permissions/android.software.live_wallpaper.xml
 
-# Power HAL
-PRODUCT_PACKAGES += \
-    power.msm7x30
-
 # Ramdisk
 PRODUCT_PACKAGES += \
     fstab.qcom \
