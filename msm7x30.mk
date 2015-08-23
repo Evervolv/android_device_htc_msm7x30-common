@@ -102,7 +102,8 @@ PRODUCT_PACKAGES += \
     fstab.qcom \
     init.qcom.rc \
     init.qcom.usb.rc \
-    ueventd.qcom.rc
+    ueventd.qcom.rc \
+    twrp.fstab \
 
 # Sensors
 PRODUCT_PACKAGES += \

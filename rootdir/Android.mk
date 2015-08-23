@@ -20,7 +20,11 @@ include $(CLEAR_VARS)
 LOCAL_MODULE       := fstab.qcom
 LOCAL_MODULE_TAGS  := optional eng
 LOCAL_MODULE_CLASS := ETC
-LOCAL_SRC_FILES    := etc/fstab.qcom
+ifneq ($(filter glacier, $(TARGET_DEVICE)),)
+  LOCAL_SRC_FILES  := etc/fstab.qcom-small
+else
+  LOCAL_SRC_FILES  := etc/fstab.qcom
+endif
 LOCAL_MODULE_PATH  := $(TARGET_ROOT_OUT)
 include $(BUILD_PREBUILT)
 
@@ -46,4 +50,16 @@ LOCAL_MODULE_TAGS  := optional eng
 LOCAL_MODULE_CLASS := ETC
 LOCAL_SRC_FILES    := etc/ueventd.qcom.rc
 LOCAL_MODULE_PATH  := $(TARGET_ROOT_OUT)
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE       := twrp.fstab
+LOCAL_MODULE_TAGS  := optional eng
+LOCAL_MODULE_CLASS := ETC
+ifneq ($(filter glacier, $(TARGET_DEVICE)),)
+  LOCAL_SRC_FILES  := etc/twrp-small.fstab
+else
+  LOCAL_SRC_FILES  := etc/twrp.fstab
+endif
+LOCAL_MODULE_PATH  := $(TARGET_RECOVERY_ROOT_OUT)/etc
 include $(BUILD_PREBUILT)
