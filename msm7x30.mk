@@ -20,6 +20,11 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 # Common proprietary blobs
 $(call inherit-product-if-exists, vendor/htc/msm7x30-common/msm7x30-vendor.mk)
 
+# Call the right qcom hals
+$(call project-set-path,qcom-audio,hardware/qcom/audio-caf/msm8960)
+$(call project-set-path,qcom-display,hardware/qcom/display-legacy)
+$(call project-set-path,qcom-media,hardware/qcom/media-legacy)
+
 # Wifi firmware
 $(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4329/device-bcm.mk)
 
