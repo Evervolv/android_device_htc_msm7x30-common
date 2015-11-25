@@ -19,6 +19,8 @@
 #include <errno.h>
 #include <dirent.h>
 #include <math.h>
+#include <malloc.h>
+#include <string.h>
 
 #include <poll.h>
 #include <pthread.h>

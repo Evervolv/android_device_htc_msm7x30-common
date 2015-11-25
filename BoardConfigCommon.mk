@@ -134,17 +134,14 @@ BOARD_USES_QCOM_HARDWARE := true
 
 # Recovery
 RECOVERY_FSTAB_VERSION := 2
+RECOVERY_SDCARD_ON_DATA := true
+BOARD_HAS_NO_REAL_SDCARD := true
 TARGET_RECOVERY_DEVICE_DIRS += device/htc/msm7x30-common
 TARGET_RECOVERY_FSTAB = device/htc/msm7x30-common/rootdir/etc/fstab.qcom
 
 # Ril
 BOARD_USE_NEW_LIBRIL_HTC := true
 BOARD_USES_LEGACY_RIL := true
-
-# SDCard
-BOARD_SDCARD_DEVICE_PRIMARY := /dev/block/mmcblk1p1
-BOARD_SDCARD_DEVICE_SECONDARY := /dev/block/mmcblk1
-BOARD_SDEXT_DEVICE := /dev/block/mmcblk1p2
 
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
@@ -162,13 +159,15 @@ BOARD_DEVICE_SETTINGS := device/htc/msm7x30-common/DeviceSettings
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_15x24.h\"
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
+TW_INTERNAL_STORAGE_PATH := "/data/media"
+TW_INTERNAL_STORAGE_MOUNT_POINT := "data"
 TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
 TW_EXCLUDE_SUPERSU := true
 TW_EXCLUDE_MTP := true
 TW_FLASH_FROM_STORAGE := true
 TW_NO_CPU_TEMP := true
 TW_NO_SCREEN_BLANK := true
-TW_THEME := portrait_hdpi
+TW_THEME := portrait_mdpi
 TW_USE_TOOLBOX := true
 
 # Usb

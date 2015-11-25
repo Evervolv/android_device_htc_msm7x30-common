@@ -20,6 +20,8 @@
 #include <poll.h>
 #include <unistd.h>
 #include <dirent.h>
+#include <malloc.h>
+#include <string.h>
 #include <sys/select.h>
 
 #include <linux/akm8975.h>

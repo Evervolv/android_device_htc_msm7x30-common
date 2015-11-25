@@ -18,6 +18,8 @@
 #include <errno.h>
 #include <unistd.h>
 #include <poll.h>
+#include <malloc.h>
+#include <string.h>
 
 #include <sys/cdefs.h>
 #include <sys/types.h>

@@ -20,11 +20,6 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 # Common proprietary blobs
 $(call inherit-product-if-exists, vendor/htc/msm7x30-common/msm7x30-vendor.mk)
 
-# Call the right qcom hals
-$(call project-set-path,qcom-audio,hardware/qcom/audio-caf/msm8960)
-$(call project-set-path,qcom-display,hardware/qcom/display-legacy)
-$(call project-set-path,qcom-media,hardware/qcom/media-legacy)
-
 # Wifi firmware
 $(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4329/device-bcm.mk)
 
@@ -45,6 +40,10 @@ PRODUCT_PACKAGES += \
 # Audio policy config
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio_policy.conf:system/etc/audio_policy.conf \
+
+# BoringSSL compatability wrapper
+PRODUCT_PACKAGES += \
+    libboringssl-compat
 
 # Camera
 PRODUCT_PACKAGES += \
@@ -113,6 +112,10 @@ PRODUCT_PACKAGES += \
 # Sensors
 PRODUCT_PACKAGES += \
     sensors.msm7x30
+
+# Stlport
+PRODUCT_PACKAGES += \
+    libstlport
 
 # USB
 PRODUCT_PACKAGES += \
@@ -189,14 +192,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.product.locale.language=en \
     ro.product.locale.region=US \
     persist.sys.strictmode.visual=0 \
-    persist.sys.strictmode.disable=1
-
-# Use ART small mode
-# http://source.android.com/devices/tech/dalvik/configure.html#with_art_small_mode
-PRODUCT_PROPERTY_OVERRIDES += \
-	dalvik.vm.dex2oat-filter=interpret-only \
-	dalvik.vm.dex2oat-flags=--no-watch-dog \
-	dalvik.vm.image-dex2oat-filter=speed
+    persist.sys.strictmode.disable=1 \
+    dalvik.vm.dex2oat-flags=--no-watch-dog
 
 $(call inherit-product, frameworks/native/build/phone-hdpi-512-dalvik-heap.mk)
 

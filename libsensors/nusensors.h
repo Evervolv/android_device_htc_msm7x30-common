@@ -21,6 +21,8 @@
 #include <errno.h>
 #include <sys/cdefs.h>
 #include <sys/types.h>
+#include <malloc.h>
+#include <string.h>
 
 #include <linux/input.h>
 
